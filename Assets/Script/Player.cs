@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
-        rigid.gravityScale = 1.5F;
+        rigid.gravityScale = 1;
     }
     void Update()
     {
@@ -45,13 +45,13 @@ public class Player : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-            if (rigid.gravityScale == 1.5F)
+            if (rigid.gravityScale == 1)
             {
-                rigid.gravityScale = -1.5F;
+                rigid.gravityScale = -1;
             }
             else
             {
-                rigid.gravityScale = 1.5F;
+                rigid.gravityScale = 1;
             }
         }
     }
