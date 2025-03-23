@@ -1,10 +1,10 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     [SerializeField]
     float maxSpeed;
-
     Rigidbody2D rigid;
     void Awake()
     {
@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
         SpeedLimit();
         StopSliding();
         ChangeGravity();
+        GetKey();
     }
     void PlayerMove()
     {
@@ -53,6 +54,13 @@ public class Player : MonoBehaviour
             {
                 rigid.gravityScale = 1;
             }
+        }
+    }
+    void GetKey()
+    {
+        if (Key.HaveKey == true)
+        {
+            this.GetComponent<SpriteRenderer>().material.color = Color.yellow;
         }
     }
 }
